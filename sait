@@ -1,0 +1,43 @@
+// --- README: Deploy Instructions for Ilya's Fundraiser Platform --- /* This README provides step-by-step instructions to deploy the Donate Now page and Admin Dashboard with live URLs.
+
+1. Setup Frontend (Next.js + Tailwind): a) Clone project repo (or create new GitHub repo and push project code). b) Install dependencies: npm install c) Configure environment variables in .env: NEXT_PUBLIC_SAFE_ADDRESS=<your_multisig_safe_address> NEXT_PUBLIC_INFURA_ID=<your_infura_project_id> NEXT_PUBLIC_BACKEND_URL=<your_backend_api_url> d) Test locally: npm run dev
+
+Donate Now page: http://localhost:3000
+
+Admin Dashboard: http://localhost:3000/admin
+
+
+
+2. Deploy Frontend to Vercel: a) Go to https://vercel.com and sign in / create account. b) Import your GitHub repository. c) Vercel automatically detects Next.js project. d) Set environment variables in Vercel dashboard (same as .env). e) Deploy. After build, you will get a live link like: https://ilya-fundraiser.vercel.app/
+
+Donate Now page: https://ilya-fundraiser.vercel.app/
+
+Admin Dashboard: https://ilya-fundraiser.vercel.app/admin
+
+
+
+3. Setup Backend (Express + Prisma + PostgreSQL): a) Use Railway / Render / Heroku. b) Configure PostgreSQL database and Prisma schema. c) Set environment variables for DB connection. d) Run server: node backend/server.js e) Update NEXT_PUBLIC_BACKEND_URL in frontend .env with your deployed backend URL.
+
+
+4. Notes:
+
+Always use testnet / test keys first for development.
+
+Never expose private keys in frontend or public repos.
+
+For production, ensure multisig Safe is fully funded and co-signers onboarded.
+
+Receipts and purchaser info securely stored in backend.
+
+Optional: add SSL / HTTPS (Vercel does automatically), JWT / API keys for backend security.
+
+
+
+
+Outcome:
+
+Live Donate Now page: https://ilya-fundraiser.vercel.app/
+
+Live Admin Dashboard: https://ilya-fundraiser.vercel.app/admin
+
+Backend API handles purchaser records, receipts, and Safe proposal preparation. */
